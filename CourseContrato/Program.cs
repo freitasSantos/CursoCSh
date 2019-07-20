@@ -12,12 +12,12 @@ namespace CourseContrato {
             Console.WriteLine("Enter worker data:");
             Console.Write("Name: ");
             string name = Console.ReadLine();
-            Console.Write("Level(Junior/MidLeve/Senior): ");
+            Console.Write("Level(Junior/MidLevel/Senior): ");
             WorkerLevel level = (WorkerLevel)Enum.Parse(typeof(WorkerLevel), Console.ReadLine());
             Console.Write("Base salary: ");
             double salary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Worker employee = new Worker(name, salary, level, department);
-            Console.Write("How many contracts th this worker? ");
+            Console.Write("How many contracts to this worker? ");
             int n = int.Parse(Console.ReadLine());
             for (int i = 1; i <= n; i++) {
                 Console.WriteLine("Enter #" + i + " contract data:");
