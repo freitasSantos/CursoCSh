@@ -38,6 +38,11 @@ namespace CourseContrato.Classes {
             }
             return salary;
         }
-        
+
+        public override string ToString() {
+            return "Name: "+Name+
+                   "\nDepartment: "+department.Name;
+        }
+
     }
 }
