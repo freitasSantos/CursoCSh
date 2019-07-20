@@ -9,18 +9,35 @@ namespace CourseContrato.Classes {
         public double BaseSalary { get; set; }
         public WorkerLevel Level { get; set; }
         public Department department { get; set; }
-        List<Contract> ListContract = new List<Contract>();
+        public List<Contract> ListContract { get; set; } = new List<Contract>();
 
         public Worker(string name,double baseSalary,WorkerLevel level,Department departmentt) {
-            this.Name = name;
-            this.BaseSalary = baseSalary;
-            this.Level = level;
-            this.department = departmentt;
+            Name = name;
+            BaseSalary = baseSalary;
+            Level = level;
+            department = departmentt;
         }
 
         public Worker() {
         }
 
+        public void addContract(Contract obj) {
+            ListContract.Add(obj);
+        }
+
+        public void removeContract(Contract obj) {
+            ListContract.Remove(obj);
+        }
+
+        public double income(int month, int year) {
+            double salary = BaseSalary;
+            foreach(Contract obj in ListContract) {
+                if(obj.Date.Month==month && obj.Date.Year == year) {
+                    salary += obj.totalValue();
+                }
+            }
+            return salary;
+        }
         
     }
 }

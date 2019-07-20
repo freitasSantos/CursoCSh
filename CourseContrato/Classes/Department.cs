@@ -6,7 +6,7 @@ namespace CourseContrato.Classes {
         public string Name { get; set; }
 
         public Department (string name) {
-            this.Name = name;
+            Name = name;
         }
 
         public Department() {
